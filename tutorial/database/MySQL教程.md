@@ -1,14 +1,16 @@
 # MySQL教程
 
-- [准备工作](准备工作)
-  - [安装](安装)
-  - [修改root密码](修改root密码)
+- [基本内容](#基本内容)
+  - [安装](#安装)
+  - [登录](#登录)
+  - [修改密码](#修改密码)
+  - [远程登录](#远程登录)
+  - [数据库操作](#库操作)
+  - [用户操作](#用户操作)
 
-## 准备工作
+## 数据库操作
 
 ### 安装
-
-*作者继续偏执的使用Ubuntu，如果您不愿意与作者使用相同的操作系统，请自行“翻译”作者提供的指令*
 
 在MySQL数据库使用前，请先安装数据库。
 
@@ -20,7 +22,73 @@
 apt install mysql-server-8.0
 ```
 
-### 修改root密码
+### 登录
 
+```shell
+mysql -u root -p
+```
 
+在以上指令中，mysql即可视为登录的工具。
 
+> -u 后接要登录的账号(user)
+> -p 后接要登录账号的密码(password)
+
+### 修改密码
+
+默认的root账户密码为空，MySQL提示输入密码时，直接回车即可
+
+以下指令可以修改账号密码
+
+```mysql
+use mysql;
+alter user 'root'@'localhost' identified by 'root';
+```
+
+### 远程登录
+
+默认root账号是没有开启远程访问，如果需要远程服务可以通过以下指令开启
+
+```mysql
+use mysql;
+update user set host='%' where user='root';
+flush privileges;
+```
+
+### 库操作
+
+登录MySQL后
+
+创建数据库
+（kareza 为创建的数据库名）
+
+```mysql
+create database kareza;
+```
+
+删除数据库
+（kareza 为删除的数据库名）
+
+```mysql
+drop database kareza;
+```
+
+### 用户操作
+
+登录MySQL后
+
+创建用户
+（创建可以远程访问MySQL的用户kareza，密码为kareza）
+
+```mysql
+use mysql;
+create user 'kareza'@'%' identified by 'kareza';
+```
+
+用户赋权
+（为用户kareza赋予kareza数据库的所有权限）
+
+```mysql
+use mysql;
+grant all privileges on kareza.* to 'kareza'@'%';
+flush privileges;
+```
