@@ -1,8 +1,8 @@
 # 博客
 
-**热爱生活，致力于让开发更加优雅～☕️**
-@CSDN【[Kareza](https://blog.csdn.net/Eazon_chan?spm=1000.2115.3001.5343)】
-@微信公众号【Kareza】
+**热爱生活，致力于让开发更加优雅～☕️**  
+@CSDN【[Kareza](https://blog.csdn.net/Eazon_chan?spm=1000.2115.3001.5343)】  
+@微信公众号【Kareza】  
 ![二维码](illustration/微信公众号_二维码.JPG)
 
 ## 教程
