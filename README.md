@@ -6,7 +6,13 @@
 
 ## 教程
 
-- [优雅的命令行](tutorial/优雅的命令行.md)
+### 开发环境
+
+- [优雅的命令行](tutorial/dev/优雅的命令行.md)
+
+### 数据库
+
+- [MySQL教程](tutorial/database/MySQL教程.md)
 
 ## 贡献
 
