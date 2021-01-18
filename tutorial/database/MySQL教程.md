@@ -24,13 +24,23 @@ apt install mysql-server-8.0
 
 ### 登录
 
--u 后接要登录的账号(user)
+首次安装后可以直接
 
--p 后接要登录账号的密码(password)
+```shell
+sudo mysql
+```
+
+不需要输入账户密码
+
+后续登录可以通过下面一行指令
 
 ```shell
 mysql -u root -p
 ```
+
+-u 后接要登录的账号(user)
+
+-p 后接要登录账号的密码(password)
 
 ### 修改密码
 
