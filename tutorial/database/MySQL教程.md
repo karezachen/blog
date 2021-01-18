@@ -8,7 +8,7 @@
   - [数据库操作](#库操作)
   - [用户操作](#用户操作)
 
-## 数据库操作
+## 基本内容
 
 ### 安装
 
@@ -24,13 +24,11 @@ apt install mysql-server-8.0
 
 ### 登录
 
-首次安装后可以直接
+首次安装后可以直接下面一行指令登录，不需要输入账号密码
 
 ```shell
 sudo mysql
 ```
-
-不需要输入账户密码
 
 后续登录可以通过下面一行指令
 
@@ -44,13 +42,21 @@ mysql -u root -p
 
 ### 修改密码
 
-默认的root账户密码为空，MySQL提示输入密码时，直接回车即可
-
 以下指令可以修改账号密码
 
 ```mysql
 use mysql;
 alter user 'root'@'localhost' identified by 'root';
+```
+
+MySQL8.0的版本更改了root账户的授权方式，默认是auth_socket
+
+需要通过Unix socket文件来验证所有连接到root的用户，不能再使用密码的方式
+
+如果我们要使用密码的方式登录，则需要更改一下授权方式
+
+```shell
+alter user 'root'@'localhost' identified with mysql_native_password by 'root';
 ```
 
 ### 远程登录
