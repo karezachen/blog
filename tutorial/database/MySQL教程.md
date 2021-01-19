@@ -69,6 +69,22 @@ update user set host='%' where user='root';
 flush privileges;
 ```
 
+默认MySQL服务绑定的IP为127.0.0.1，需要修改为所有IP均可访问
+
+修改mysqld.conf
+
+```shell
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+将其中的
+
+> bind-address = 127.0.0.1
+
+改为
+
+> bind-address = 0.0.0.0
+
 ### 库操作
 
 登录MySQL后
