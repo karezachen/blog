@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>kareza 的技术博客</title>
+  <title>command</title>
   <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -290,22 +290,51 @@ page-break-after: avoid;
   <![endif]-->
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">kareza 的技术博客</h1>
-</header>
-<p><em>挖个坑，目标：博客100w阅读</em></p>
-<h2 id="工具">工具</h2>
+<h1 id="优雅的命令行">优雅的命令行</h1>
+<h2 id="预览图">预览图</h2>
+<figure>
+<img src="../images/2022/2.png" alt="优雅的命令行_预览图" />
+<figcaption aria-hidden="true">优雅的命令行_预览图</figcaption>
+</figure>
 <ul>
-<li><a href="posts/command.html">优雅的命令行</a></li>
+<li>详细的命令行信息</li>
+<li>高效的Git反馈</li>
+<li>命令提示（一键补全）</li>
+<li>语法高亮提醒</li>
+<li>更多插件或主题可自行配置</li>
 </ul>
-<h2 id="算法">算法</h2>
-<ul>
-<li>[一致性hash算法]</li>
-</ul>
-<h2 id="贡献">贡献</h2>
-<p><a href="https://github.com/anuraghazra/github-readme-stats"><img src="https://github-readme-stats.vercel.app/api?username=karezachen&amp;bg_color=30,ff4d4f,ff7a45,ffa940,ffc53d,ffec3d,bae637,73d13d&amp;title_color=fff&amp;text_color=f5f5f5" alt="Anurag’s github stats" /></a></p>
-<h2 id="版权">版权</h2>
-<p>所有文章采用<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">知识共享署名-非商业性使用-相同方式共享
-3.0 中国大陆许可协议</a>进行许可</p>
+<h2 id="前情提要">前情提要</h2>
+<p>前几天在我的微信公众号中更新了一篇关于命令行的文章<a href="https://mp.weixin.qq.com/s/tXemDoVNEBtMGvvNqphGEQ">《左手咖啡，右手命令行》</a>，讲了讲走开发这几年我用命令行的经历，对命令行的优雅之处还不甚了解的同学可以去看一看。</p>
+<p>本文是对那篇文章的补充，因为空口无凭，我越强调命令行可能有些读者会越加觉得言过其实，所以这篇定位为教程类的文章，可以带领你完成命令行的配置，让你的命令行也完成华丽变身。</p>
+<h2 id="强大的zsh">强大的zsh</h2>
+<p>在命令行起飞之前，先要选对命令行工具，传统的bash、sh工具显然不具备太强的扩展能力，也缺乏一个活跃的社区支持插件的升级。</p>
+<p>而zsh却能够担此重任。</p>
+<p>它的扩展项目oh-my-zsh至今在GitHub上已经收获了122k的星，拥有超过1700人为项目贡献过，近300个可选组件……</p>
+<p>在ubuntu 20.10上只需要两行命令即可安装zsh并将其设置为默认命令行工具。
+<em>作者偏执的认为如果不使用和作者相同的环境，那你应该具备“翻译”作者提供的命令的能力</em></p>
+<pre class="shell"><code>apt update
+apt install zsh</code></pre>
+<h2 id="优雅的oh-my-zsh">优雅的oh-my-zsh</h2>
+<p>zsh当然是易于扩展的，但这需要比较高的开发素养，而且即使你开发了一个十分棒的组件，你可能一分钱也得不到（虽然你可能可以从中获取到极大的乐趣）。所以对于绝大多数人而言，使用那些优秀程序员开发并开源出来的组件，无疑是很正确的选择。</p>
+<p>这里就要提到上文的oh-my-zsh项目，上文我们已经介绍过这个项目的受欢迎程度，这边就不再赘述。</p>
+<p>想要安装oh-my-zsh，你需要先在你的机器上安装git工具。</p>
+<p>假设你还未安装git工具，你可以通过以下两行命令安装。</p>
+<pre class="shell"><code>apt update
+apt install git</code></pre>
+<p>在这之后，你可以使用作者的开源项目<a href="https://github.com/karezachen/mydev.git">mydev</a>完成后续的oh-my-zsh安装，以及配置和作者一样的命令行。（图见文章开头）</p>
+<p>以下两行命令可以安装oh-my-zsh
+<strong>(安装脚本复制自官方，因为官方提供的下载地址经常会出现被墙的情况，故复制到自己的项目中)</strong></p>
+<pre class="shell"><code>git clone https://github.com/karezachen/mydev.git
+sh -c mydev/oh-my-zsh/install.sh</code></pre>
+<p>以下一行命令可安装命令提示（一键补全）插件（未在zsh配置中开启，所以暂时不生效）</p>
+<pre class="shell"><code>git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</code></pre>
+<p>以下一行命令可安装语法高亮插件（未在zsh配置中开启，所以暂时不生效）</p>
+<pre class="shell"><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code></pre>
+<p>将作者的zsh配置文件移到覆盖安装时默认的zsh配置文件,并使配置生效</p>
+<pre class="shell"><code>cp mydev/oh-my-zsh/.zshrc ~/.zshrc
+source ~/.zshrc</code></pre>
+<p>如果你完整的阅读了作者的这篇文章，并顺利的跟着操作了一遍。</p>
+<p>你现在应该已经拥有了一个在咖啡馆会被搭讪的命令行工具！</p>
+<p>这就收拾好包出发吧～🍀</p>
 </body>
 </html>
