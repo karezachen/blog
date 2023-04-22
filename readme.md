@@ -1,18 +1,12 @@
-# 博客
+*挖个坑，目标：博客100w阅读*
 
-**热爱生活，致力于让开发更加优雅～☕️**
-@CSDN【[Kareza](https://blog.csdn.net/Eazon_chan)】
-@微信公众号【Kareza】
-
-## 教程
-
-### 开发环境
+## 工具
 
 - [优雅的命令行](dev/优雅的命令行.md)
 
-### 数据库
+## 算法
 
-- [MySQL教程](database/MySQL教程.md)
+- [一致性hash算法]
 
 ## 贡献
 
