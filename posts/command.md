@@ -2,7 +2,7 @@
 
 ## 预览图
 
-![优雅的命令行_预览图](../images/2022/2.png)
+![优雅的命令行_预览图](http://qiniu.kareza.cn/2021-03-01-elegant-prompt.png)
 
 - 详细的命令行信息
 - 高效的Git反馈
