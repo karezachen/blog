@@ -2,6 +2,7 @@
 
 ## 工具
 
+- [iTerm2 配置和美化](https://sspai.com/post/63241)
 - [优雅的命令行](posts/command.html)
 
 ## 算法
